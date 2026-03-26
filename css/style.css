@@ -1,0 +1,177 @@
+/* --- 1. CONFIGURACIÓN GENERAL --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body .special-gothic-condensed-one-regular {
+  font-family: "Special Gothic Condensed One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+header { 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), #289906; 
+    color: white; 
+    text-align: center; 
+    padding: 60px 20px;
+}
+
+/* --- 2. NAVEGACIÓN CENTRADA --- */
+nav { 
+    background-color: #388e46; 
+    display: flex; 
+    justify-content: center; /* CENTRA EL CONTENIDO */
+    align-items: center;
+    gap: 90px;               /* ESPACIO ENTRE ENLACES Y BUSCADOR */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a { color: white; text-decoration: none; padding: 10px 15px; font-weight: bold; }
+nav a.activo { background-color: #b8b507; color: #333; border-radius: 5px; }
+
+.buscador-contenedor {
+    background: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.buscador-contenedor input { border: none; outline: none; padding: 5px; }
+
+/* --- 3. TÍTULOS Y CUADROS --- */
+h2 { 
+    text-align: center; 
+    color: #2e7d32; 
+    margin: 40px 0; 
+    width: 100%;
+}
+
+.contenido { 
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; /* CENTRA EL CONTENIDO EN LA PANTALLA */
+}
+
+.cuadros-empresa {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cuadro-info {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 280px;
+    border-top: 6px solid #2e7d32;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* --- 4. GRID DE PRODUCTOS (FORZADO A 3 COLUMNAS) --- */
+.contenedor-grid {
+    display: grid;
+    /* Cambiamos auto-fit por repeat(3, 1fr) para forzar las 3 columnas */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* Aumenté un poco el espacio para que respiren */
+    justify-items: center; /* Centra las tarjetas dentro de su celda */
+    padding: 20px;
+    max-width: 1000px; /* Limitamos el ancho total para que no se estiren demasiado */
+    margin: 0 auto;    /* Centra todo el bloque del catálogo */
+}
+
+.tarjeta-producto {
+    background: white;
+    width: 100%;      /* Ahora el ancho es flexible según la columna */
+    max-width: 280px; /* Pero no dejará que crezca más de esto para no verse gigante */
+    height: 400px;    /* Un poquito más de alto para que el contenido no se amontone */
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    height: 150px; /* Tamaño de imagen más discreto */
+    object-fit: cover; /* Recorta la imagen para que encaje perfecto sin estirarse */
+    border-radius: 8px;
+}
+
+.tarjeta-producto h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #2e7d32;
+    /* Si el nombre es muy largo, lo corta para no mover el diseño */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.precio { 
+    color: #e67e22; 
+    font-weight: bold; 
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.precio { color: #e67e22; font-weight: bold; margin: 10px 0; }
+
+.btn-carrito {
+    background: #388e3c; color: white; border: none;
+    padding: 10px; width: 100%; border-radius: 5px; cursor: pointer;
+}
+
+/* MODO BÚSQUEDA (USADO POR JS) */
+.modo-busqueda-horizontal {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    grid-template-columns: none !important;
+}
+
+@media (max-width: 850px) {
+    nav { flex-direction: column; gap: 10px; }
+    .contenedor-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* ESTO VA AL FINAL DE TU ARCHIVO CSS */
+
+header.banner-principal {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/campo-frutas.avif.avif) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    height: auto;
+    min-height: 250px; /* Ajusta esto para ver más o menos imagen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* --- ANIMACIÓN DE BOTONES --- */
+
+.btn-carrito {
+    transition: all 0.3s ease; /* Hace que el cambio no sea brusco, sino suave */
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-carrito:hover {
+    background-color: #2e7d32; /* Un verde un poco más oscuro al pasar el mouse */
+    transform: scale(1.05);    /* El botón se agranda un poquito (5%) */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Añade una sombra para que parezca que flota */
+    cursor: pointer;
+}
+
+.btn-carrito:active {
+    transform: scale(0.95);    /* Efecto de "presionado": el botón se encoge un poco al hacer clic */
+}
