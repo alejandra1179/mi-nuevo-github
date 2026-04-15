@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            let mensaje = "Deseas realizar este pedido";
+            let mensaje = "Deseo realizar este pedido";
             
             carrito.forEach(p => {
                 mensaje += `• ${p.nombre} ($${p.precio.toLocaleString()})%0A`;
