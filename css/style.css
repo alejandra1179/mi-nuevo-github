@@ -175,3 +175,22 @@ header.banner-principal {
 .btn-carrito:active {
     transform: scale(0.95);    /* Efecto de "presionado": el botón se encoge un poco al hacer clic */
 }
+
+/* --- 5. SECCIÓN CARRITO (Pégalo al final de tu archivo .css) --- */
+#carrito { display: none; } /* Se oculta al cargar, el JS lo muestra */
+
+.titulo-carrito { border-bottom: 2px solid #388e3c; padding-bottom: 10px; }
+
+.mensaje-vacio { text-align: center; padding: 60px 20px; color: #888; }
+
+.seccion-finalizar {
+    display: none; 
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+
+.btn-whatsapp { background-color: #25D366 !important; }
+.btn-eliminar { background-color: #c0392b !important; margin-top: 10px; }

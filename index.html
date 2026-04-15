@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frutas y verduras GuaDiaz</title>
-    <link rel="icon" href="img/frutas icono.jpg" type="image/png">
+    <link rel="icon" href="img/campo-frutas.avif.avif" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +24,7 @@
         <a href="#verduras">Verduras</a>
         <a href="#aromaticas">Aromáticas</a>
         <a href="#jardin">Jardín</a>
+        <a href="#carrito">carrito</a>
         </div>
         <div class="buscador-contenedor">
         <input type="text" id="inputBusqueda" placeholder="Buscar producto...">
@@ -54,6 +55,23 @@
                 </div>
             </div>
         </section>
+        <section id="carrito" class="contenido">
+    <h2 class="titulo-carrito">Tu Carrito de Compras</h2>
+    
+    <div id="lista-carrito">
+        <p class="mensaje-vacio">Aún no has añadido productos.</p>
+    </div>
+
+    <div class="seccion-finalizar" id="finalizar-compra" style="display: none;">
+        <p class="total-compra">Total a pagar: $<span id="total-precio">0</span></p>
+        <button class="btn-carrito btn-whatsapp" id="btn-enviar-whatsapp">
+            Finalizar Pedido por WhatsApp
+        </button>
+        <button class="btn-carrito btn-eliminar" id="btn-vaciar-carrito">
+            Vaciar Carrito
+        </button>
+    </div>
+</section>
 
         <section id="frutas" class="contenido" style="display: none;">
             <h2>Nuestras Frutas</h2>
@@ -842,12 +860,40 @@
                 </div>
 
             </div>
+        <section id="jardin" class="contenido" style="display: none;">
+            <h2>Nuestro Jardín</h2>
+            <div class="contenedor-grid">
+                <p style="text-align: center; grid-column: 1/-1;">Próximamente más plantas para tu hogar.</p>
+            </div>
         </section>
 
+        <section id="carrito" class="contenido">
+            <h2 class="titulo-carrito">Mi Carrito de Compras 🛒</h2>
+            
+            <div id="lista-carrito" class="contenedor-grid">
+                </div>
 
+            <div id="carrito-vacio-msg" class="mensaje-vacio">
+                <p>Tu carrito está actualmente vacío.</p>
+            </div>
+
+            <div id="seccion-finalizar" class="seccion-finalizar">
+                <h3>Total: <span id="total-precio">$0</span></h3>
+                <button id="btn-whatsapp" class="btn-carrito btn-whatsapp">
+                    Finalizar pedido por WhatsApp 📱
+                </button>
+                <button id="btn-vaciar" class="btn-carrito btn-eliminar">
+                    Vaciar Carrito
+                </button>
+            </div>
+        </section>
     </main>
+
+    <footer style="text-align: center; padding: 20px; background: #2e7d32; color: white; margin-top: 50px;">
+        <p>&copy; 2026 Frutas y Verduras GuaDiaz - Frescura del campo a su hogar</p>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
-
 </html>
+
